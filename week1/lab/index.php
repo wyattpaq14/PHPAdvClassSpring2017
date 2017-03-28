@@ -18,7 +18,7 @@
             
             
 
-
+            //
 
             $fullname = filter_input(INPUT_POST, 'fullname');
             $email = filter_input(INPUT_POST, 'email');
@@ -27,10 +27,12 @@
             $state = filter_input(INPUT_POST, 'state');
             $zip = filter_input(INPUT_POST, 'zip');
             $birthday = filter_input(INPUT_POST, 'birthday');
-
+            
+            
+            //call function that returns list of all the states
             $states = returnStates();
 
-
+            //pulls all the addresses in DB 
             $addresses = readAllAddress();
 
             $errors = [];
