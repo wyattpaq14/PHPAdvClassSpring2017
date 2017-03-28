@@ -1,8 +1,8 @@
 
 <?php if (is_array($addresses) && count($addresses) > 0) : ?>
-<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-    <h1>Address List </h1>
-    <table>
+<div class="row">
+    <h1>Address List </h1><br />
+    <table class="table">
 
         <tr>
             <th>Full Name</th>
@@ -29,3 +29,4 @@
     </table>
 
 <?php endif; ?>
+</div>
