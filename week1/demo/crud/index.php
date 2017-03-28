@@ -10,7 +10,6 @@
     </head>
     <body>
         <?php
-      
         require_once './models/dbconnect.php';
         require_once './models/util.php';
         require_once './models/phoneCrud.php';
@@ -19,7 +18,7 @@
         $phone = filter_input(INPUT_POST, 'phone');
         $phoneType = filter_input(INPUT_POST, 'phonetype');
 
-        
+
 
         $phones = getAllPhone();
         $errors = [];
@@ -27,17 +26,17 @@
 
         if (isPostRequest()) {
 
-            if ( !phoneIsValid($phone) ) {
+            if (!phoneIsValid($phone)) {
                 $errors[] = 'Sorry Phone is not valid';
             }
-             
-            
-            if ( empty($phoneType) ) {
+
+
+            if (empty($phoneType)) {
                 $errors[] = 'Sorry Phone type is not valid';
             }
 
-            if ( !count($errors) ) {
-                if ( addPhone($phone, $phoneType) ) {
+            if (!count($errors)) {
+                if (addPhone($phone, $phoneType)) {
                     $message = 'Phone Added';
                     $phone = '';
                     $phoneType = '';
@@ -45,7 +44,6 @@
                     $errors[] = 'phone could not be added';
                 }
             }
-            
         }
 
 

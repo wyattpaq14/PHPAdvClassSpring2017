@@ -19,9 +19,7 @@ function phoneIsValid($phone) {
 
     if (!preg_match($phoneRegex, $phone)) {
         return false;
-    }
-    else if (preg_match($phoneRegex, $phone)) {
+    } else if (preg_match($phoneRegex, $phone)) {
         return true;
     }
-
 }

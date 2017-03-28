@@ -1,9 +1,10 @@
 <?php
+
 /**
  * Function to extablish a databse connection
  * 
  * @return PDO Object
- */  
+ */
 function dbconnect() {
     $config = array(
         'DB_DNS' => 'mysql:host=192.168.2.223;port=3306;dbname=PHPAdvClassSpring2017',
@@ -27,8 +28,3 @@ function dbconnect() {
 
     return $db;
 }
-
-
-
-    
-

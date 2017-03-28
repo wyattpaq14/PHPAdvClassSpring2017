@@ -6,10 +6,9 @@
     </head>
     <body>
         <?php
-        
         session_start();
         // I changed something
-            phpinfo();
+        phpinfo();
         ?>
     </body>
 </html>

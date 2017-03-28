@@ -5,8 +5,8 @@
  *    
  * @return boolean
  */
-function addPhone($phone, $phoneType ) {
-    
+function addPhone($phone, $phoneType) {
+
     $db = dbconnect();
     $stmt = $db->prepare("INSERT INTO phone SET phone = :phone, phonetype = :phonetype, logged = now(), lastupdated = now()");
     $binds = array(
@@ -16,7 +16,7 @@ function addPhone($phone, $phoneType ) {
     if ($stmt->execute($binds) && $stmt->rowCount() > 0) {
         return true;
     }
-    
+
     return false;
 }
 
@@ -26,14 +26,14 @@ function addPhone($phone, $phoneType ) {
  * @return Array
  */
 function getAllPhone() {
-    
+
     $db = dbconnect();
     $stmt = $db->prepare("SELECT * FROM phone");
-    
+
     $results = array();
     if ($stmt->execute() && $stmt->rowCount() > 0) {
-       $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
-    
+
     return $results;
 }
