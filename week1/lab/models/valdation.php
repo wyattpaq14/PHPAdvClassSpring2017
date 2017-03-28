@@ -28,10 +28,14 @@ function isValidDate($date) {
     $testDate = $date;
     $test_arr = explode('-', $testDate);
 
-    if (checkdate($test_arr[1], $test_arr[2], $test_arr[0])) {
-        return true;
-    } else {
-        return false;
+    //make sure checkdate has a non-empty date to check
+
+    if (!$date == "") {
+        if (checkdate($test_arr[1], $test_arr[2], $test_arr[0])) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
 
