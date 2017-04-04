@@ -72,7 +72,7 @@
          return false;
          }
          */
-    // call initialization file
+        // call initialization file
         if (window.File && window.FileList && window.FileReader) {
             document.addEventListener("DOMContentLoaded", Init);
         }
@@ -89,7 +89,7 @@
                 fileToUpload;
 
         function Init() {
-    // Event Listener for when the dragged file is over the drop zone.
+            // Event Listener for when the dragged file is over the drop zone.
             dropZoneImg.addEventListener('dragover', function (e) {
                 if (e.preventDefault)
                     e.preventDefault();
@@ -99,17 +99,17 @@
                 e.dataTransfer.dropEffect = 'copy';
             });
 
-    // Event Listener for when the dragged file enters the drop zone.
+            // Event Listener for when the dragged file enters the drop zone.
             dropZoneImg.addEventListener('dragenter', function (e) {
                 this.classList.add('over');
             });
 
-    // Event Listener for when the dragged file leaves the drop zone.
+            // Event Listener for when the dragged file leaves the drop zone.
             dropZoneImg.addEventListener('dragleave', function (e) {
                 this.classList.remove('over');
             });
 
-    // Event Listener for when the dragged file dropped in the drop zone.
+            // Event Listener for when the dragged file dropped in the drop zone.
             dropZoneImg.addEventListener('drop', function (e) {
                 if (e.preventDefault)
                     e.preventDefault();
@@ -159,7 +159,7 @@
 
         }
         ;
-    // Read the contents of a file.
+        // Read the contents of a file.
         function readTexImg(file) {
             var readerimg = new FileReader();
 
@@ -225,7 +225,7 @@
 
 
                 } else {
-    // waiting for the call to complete
+                    // waiting for the call to complete
                 }
             };
 
@@ -237,12 +237,12 @@
                 uploadProgress.innerHTML = Math.ceil(e.loaded / e.total) * 100 + '%';
                 ;
             } else {
-    // Unable to compute progress information since the total size is unknown
+                // Unable to compute progress information since the total size is unknown
             }
         }
 
         function transferComplete(e) {
-    //uploadProgress.innerHTML = 'The transfer is complete.';
+            //uploadProgress.innerHTML = 'The transfer is complete.';
         }
 
 

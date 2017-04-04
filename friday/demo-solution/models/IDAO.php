@@ -1,4 +1,5 @@
 <?php
+
 /**
  *
  * @author GFORTI
@@ -11,11 +12,15 @@
  * 
  */
 interface IDAO {
-    /*crud*/
+    /* crud */
+
     function create($values);
+
     function read($id);
+
     function update($values);
+
     function delete($id);
+
     function readAll();
-    
 }

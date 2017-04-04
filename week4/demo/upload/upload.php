@@ -85,7 +85,7 @@
         }
         ?>
 
-        <?php if ( isset($fileName) ) : ?>
+        <?php if (isset($fileName)) : ?>
             <h2><?php echo $fileName; ?> is uploaded successfully.</h2>
         <?php else: ?>
             <p><?php echo $error; ?></p>

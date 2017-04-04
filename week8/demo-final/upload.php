@@ -71,7 +71,7 @@ try {
 
     $salt = uniqid(mt_rand(), true);
     $fileName = 'img_' . sha1($salt . sha1_file($_FILES['upfile']['tmp_name']));
-    
+
     if (!is_dir('./uploads')) {
         mkdir('./uploads');
     }
@@ -185,12 +185,12 @@ try {
 
     imagedestroy($rImg);
     imagedestroy($image_p);
-    
-   
+
+
 
     /*
       if ( !move_uploaded_file( $_FILES["upfile"]["tmp_name"], $location) ) {
-        throw new RuntimeException('Failed to move uploaded file.');
+      throw new RuntimeException('Failed to move uploaded file.');
       }
 
      */

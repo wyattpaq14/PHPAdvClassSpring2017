@@ -1,19 +1,19 @@
 <?php
 
-
 /**
  * Description of DB
  *
  * @author GFORTI
  */
 class DB {
+
     //put your code here
-    
+
     protected $db = null;
     protected $dns;
     protected $user;
     protected $password;
-    
+
     function __construct($dns, $user, $password) {
         $this->setDns($dns);
         $this->setUser($user);
@@ -32,7 +32,7 @@ class DB {
         return $this->password;
     }
 
-    function setDns($dns) {        
+    function setDns($dns) {
         $this->dns = $dns;
     }
 
@@ -44,17 +44,15 @@ class DB {
         $this->password = $password;
     }
 
-        
-      
-    public function getDb() { 
-        
+    public function getDb() {
+
         /*
          * If the DB is not null a connection has been made.
          */
-        if ( null != $this->db ) {
+        if (null != $this->db) {
             return $this->db;
         }
-        
+
         try {
             /* Create a Database connection and 
              * save it into the variable */
@@ -65,15 +63,13 @@ class DB {
              * connection by setting the variable to null */
             $this->closeDB();
             throw new Exception($ex->getMessage());
-                        
         }
 
         return $this->db;
     }
-    
+
     protected function closeDB() {
         $this->db = null;
     }
-    
-    
+
 }

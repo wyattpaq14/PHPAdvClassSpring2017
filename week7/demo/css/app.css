@@ -6,7 +6,7 @@ h1 {
     border: 1px solid black;
     padding: 0.1em;
     text-align: center;
-    
+
 }
 
 content {
@@ -14,24 +14,24 @@ content {
 }
 
 .gridtable {	
-	border-width: 1px;
-	border-color: #999;
-	border-collapse: collapse;
-        margin: 0 auto;
+    border-width: 1px;
+    border-color: #999;
+    border-collapse: collapse;
+    margin: 0 auto;
 }
 .gridtable th {
-	border-width: 1px;
-	padding: 8px;
-	border-style: solid;
-	border-color: #666666;
-	background-color: #dedede;
+    border-width: 1px;
+    padding: 8px;
+    border-style: solid;
+    border-color: #666666;
+    background-color: #dedede;
 }
 .gridtable td {
-	border-width: 1px;
-	padding: 8px;
-	border-style: solid;
-	border-color: #666666;
-	background-color: #ffffff;
+    border-width: 1px;
+    padding: 8px;
+    border-style: solid;
+    border-color: #666666;
+    background-color: #ffffff;
 }
 
 .footer {

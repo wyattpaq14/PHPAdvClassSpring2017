@@ -6,24 +6,26 @@
  * @author GFORTI
  */
 class PhoneDAO extends DB implements IDAO {
+
     //put your code here
-    
-    
-     function __construct() {
-        
+
+
+    function __construct() {
+
         $this->setDns('mysql:host=localhost;port=3306;dbname=PHPAdvClassSpring2016');
         $this->setPassword('');
         $this->setUser('root');
+    }
+
+    function create($values) {
         
     }
-    
-    function create($values){
+
+    function read($id) {
         
     }
-    function read($id){
-        
-    }
-    function readAll(){
+
+    function readAll() {
         $db = $this->getDb();
         $stmt = $db->prepare("SELECT * FROM phone");
 
@@ -33,11 +35,14 @@ class PhoneDAO extends DB implements IDAO {
         }
 
         return $results;
-    }  
-    function update($values){
+    }
+
+    function update($values) {
         
     }
-    function delete($id){
+
+    function delete($id) {
         
     }
+
 }

@@ -1,7 +1,7 @@
 'use strict';
 angular
-    .module('app.widgets')
-    .directive('widgetOne', widgetOne);
+        .module('app.widgets')
+        .directive('widgetOne', widgetOne);
 
 function widgetOne() {
     var directive = {
@@ -13,11 +13,11 @@ function widgetOne() {
             removeItem: '&'
         },
         link: link
-        
+
     };
     return directive;
 
     function link(scope, element, attrs) {
-      
+
     }
 }

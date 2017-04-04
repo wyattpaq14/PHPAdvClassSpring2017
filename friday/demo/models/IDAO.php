@@ -11,10 +11,14 @@
  * @author GFORTI
  */
 interface IDAO {
-    
+
     function create($values);
+
     function read($id);
-    function readAll();    
+
+    function readAll();
+
     function update($values);
+
     function delete($id);
 }

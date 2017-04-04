@@ -11,14 +11,18 @@
  * @author Wyatt Paquin
  */
 interface ICrud {
+
     //put your code here
-    
+
     public function update();
+
     public function delete();
+
     public function readSingle();
+
     public function readAll();
+
     public function create();
 }
-
 
 ?>

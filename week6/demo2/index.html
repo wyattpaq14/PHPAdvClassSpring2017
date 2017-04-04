@@ -11,11 +11,11 @@
     </head>
     <body ng-app="app.widgets">
         <div ng-controller="WidgetController as vm" class="container">   
-            
+
             <div class="page-header">
                 <h1>TODO Widget Angular App <br /><small>Example of using one controller to have directives communicate</small></h1>
-              </div>
-            
+            </div>
+
             <div class="well container" data-widget-two="" data-title="Widget Add" data-add="vm.addTodoItem(item)"></div>             
             <div class="well container" data-widget-one="" data-title="Widget List" data-todo-items="vm.todoItems" data-remove-item='vm.removeTodoItem()'></div>
         </div>  

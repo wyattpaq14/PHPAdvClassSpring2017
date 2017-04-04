@@ -1,4 +1,5 @@
 <?php
+
 /**
  *
  * @author GFORTI
@@ -13,9 +14,10 @@
  * Classes may implement more than one interface if desired by separating each interface with a comma.
  */
 interface IShapes {
+
     //put your code here
-    
-   public function width();
-   public function height();
-    
+
+    public function width();
+
+    public function height();
 }
