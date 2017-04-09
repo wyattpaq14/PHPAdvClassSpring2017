@@ -14,7 +14,7 @@
             include './templates/errors.html.php';
             include './autoload.php';
             
-            //create new instance of Crud not sure if my crud instance of 
+            //create new instance of Crud not sure if my other CRUD instance still exists?
             $crud = new Crud();
             $addresses = $crud->readAllAddress();
             

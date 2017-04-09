@@ -15,9 +15,6 @@
             include './autoload.php';
 
 
-
-            //
-
             $fullname = filter_input(INPUT_POST, 'fullname');
             $email = filter_input(INPUT_POST, 'email');
             $addressline1 = filter_input(INPUT_POST, 'addressline1');
@@ -27,9 +24,11 @@
             $birthday = filter_input(INPUT_POST, 'birthday');
             
             
-            //create new instance of DBSpring to access read all addresses
+            //create new instance of DBSpring to access CRUD functions
             $crud = new Crud();
             
+            //create new instance of Validation to access validation functions
+            $validate = new Validation();
             
             //call function that returns list of all the states
             $states = returnStates();
@@ -46,7 +45,7 @@
                     $errors[] = 'Full Name is required!';
                 }
 
-                if (!isValidEmail($email)) {
+                if (!$validate->isValidEmail($email)) {
                     $errors[] = 'Email is not valid!';
                 }
 
@@ -61,16 +60,16 @@
                     $errors[] = 'State is not valid!';
                 }
 
-                if (!isValidZip($zip)) {
+                if (!$validate->isValidZip($zip)) {
                     $errors[] = 'Zip is not valid!';
                 }
 
-                if (!isValidDate($birthday)) {
+                if (!$validate->isValidDate($birthday)) {
                     $errors[] = 'Birthday is not valid!';
                 }
 
                 if (count($errors) == 0) {
-                    createAddress($fullname, $email, $addressline1, $city, $state, $zip, $birthday);
+                    $crud->createAddress($fullname, $email, $addressline1, $city, $state, $zip, $birthday);
                     $message = "Address has been added!";
 
 
