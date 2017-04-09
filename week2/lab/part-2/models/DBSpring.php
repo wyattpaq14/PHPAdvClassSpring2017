@@ -16,16 +16,4 @@ class DBSpring extends DB {
         $this->setUser('root');
     }
 
-    function getAllPhones() {
-        $db = $this->getDb();
-        $stmt = $db->prepare("SELECT * FROM phone");
-
-        $results = array();
-        if ($stmt->execute() && $stmt->rowCount() > 0) {
-            $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        }
-
-        return $results;
-    }
-
 }

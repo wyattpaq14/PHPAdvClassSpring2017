@@ -10,11 +10,9 @@
         <div class="container-fluid col-lg-6 col-lg-offset-3">
             <?php
             // put your code here
-            include './models/dbconnect.php';
             include './models/util.php';
-            include './models/valdation.php';
             include './templates/errors.html.php';
-            include './models/CRUD.php';
+            include './autoload.php';
 
 
 
@@ -27,13 +25,17 @@
             $state = filter_input(INPUT_POST, 'state');
             $zip = filter_input(INPUT_POST, 'zip');
             $birthday = filter_input(INPUT_POST, 'birthday');
-
-
+            
+            
+            //create new instance of DBSpring to access read all addresses
+            $crud = new Crud();
+            
+            
             //call function that returns list of all the states
             $states = returnStates();
 
             //pulls all the addresses in DB 
-            $addresses = readAllAddress();
+            $addresses = $crud->readAllAddress();
 
             $errors = [];
 

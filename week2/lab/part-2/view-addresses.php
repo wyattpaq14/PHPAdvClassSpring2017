@@ -10,13 +10,14 @@
         <div class="container-fluid col-lg-6 col-lg-offset-3">
             <?php
             // put your code here
-            include './models/dbconnect.php';
             include './models/util.php';
-            include './models/valdation.php';
             include './templates/errors.html.php';
-            include './models/CRUD.php';
-
-
+            include './autoload.php';
+            
+            //create new instance of Crud not sure if my crud instance of 
+            $crud = new Crud();
+            $addresses = $crud->readAllAddress();
+            
 
             include './templates/view-address.html.php';
             ?>

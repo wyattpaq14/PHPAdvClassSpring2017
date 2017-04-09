@@ -6,36 +6,43 @@
  * and open the template in the editor.
  */
 
-function createAddress($fullname, $email, $addressline1, $city, $state, $zip, $birthday) {
+class Crud {
 
-    $db = dbconnect();
-    $stmt = $db->prepare("INSERT INTO address SET fullname = :fullname, email = :email, addressline1 = :addressline1, city = :city, state = :state, zip = :zip, birthday = :birthday");
-    $binds = array(
-        ":fullname" => $fullname,
-        ":email" => $email,
-        ":addressline1" => $addressline1,
-        ":city" => $city,
-        ":state" => $state,
-        ":zip" => $zip,
-        ":birthday" => $birthday
-    );
-    if ($stmt->execute($binds) && $stmt->rowCount() > 0) {
-        return true;
+    function createAddress($fullname, $email, $addressline1, $city, $state, $zip, $birthday) {
+        $database = new DBSpring();
+        $db = $database->getDB();
+
+        $stmt = $db->prepare("INSERT INTO address SET fullname = :fullname, email = :email, addressline1 = :addressline1, city = :city, state = :state, zip = :zip, birthday = :birthday");
+        $binds = array(
+            ":fullname" => $fullname,
+            ":email" => $email,
+            ":addressline1" => $addressline1,
+            ":city" => $city,
+            ":state" => $state,
+            ":zip" => $zip,
+            ":birthday" => $birthday
+        );
+        if ($stmt->execute($binds) && $stmt->rowCount() > 0) {
+            return true;
+        }
+
+        return false;
     }
 
-    return false;
-}
+    function readAllAddress() {
+        $database = new DBSpring();
+        $db = $database->getDB();
 
-function readAllAddress() {
-    $db = dbconnect();
-    $stmt = $db->prepare("SELECT * FROM address");
+        $stmt = $db->prepare("SELECT * FROM address");
 
-    $results = array();
-    if ($stmt->execute() && $stmt->rowCount() > 0) {
-        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $results = array();
+        if ($stmt->execute() && $stmt->rowCount() > 0) {
+            $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        }
+
+        return $results;
     }
 
-    return $results;
 }
 
 ?>
