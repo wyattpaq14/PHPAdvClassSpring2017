@@ -13,11 +13,11 @@
             include './models/util.php';
             include './templates/errors.html.php';
             include './autoload.php';
-            
+
             //create new instance of Crud not sure if my other CRUD instance still exists?
             $crud = new Crud();
             $addresses = $crud->readAllAddress();
-            
+
 
             include './templates/view-address.html.php';
             ?>

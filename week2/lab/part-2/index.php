@@ -22,14 +22,14 @@
             $state = filter_input(INPUT_POST, 'state');
             $zip = filter_input(INPUT_POST, 'zip');
             $birthday = filter_input(INPUT_POST, 'birthday');
-            
-            
+
+
             //create new instance of DBSpring to access CRUD functions
             $crud = new Crud();
-            
+
             //create new instance of Validation to access validation functions
             $validate = new Validation();
-            
+
             //call function that returns list of all the states
             $states = returnStates();
 

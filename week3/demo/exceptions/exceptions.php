@@ -32,15 +32,19 @@
 
 
         try {
-            $dbConfig = array(
-                "DB_DNS" => '',
-                "DB_USER" => '',
-                "DB_PASSWORD" => ''
-            );
+
+            //$dbConfig = array(
+            //  "DB_DNS" => '',
+            //"DB_USER" => '',
+            //"DB_PASSWORD" => ''
+            // );
+            $dbConfig = true;
             $db = new DB($dbConfig);
             $pdo = $db->getDB();
         } catch (DBException $e) {
             echo '<br /> Caught DBException: ', $e->getMessage(), "\n";
+        } catch (ArrayException $e) {
+            echo '<br /> Cought ArrayExcepttion: ', $e->getMessage(), "\n";
         }
         ?>
     </body>
