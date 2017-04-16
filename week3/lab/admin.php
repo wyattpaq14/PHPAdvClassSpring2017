@@ -10,9 +10,22 @@ and open the template in the editor.
         <title></title>
     </head>
     <body>
+        
         <?php
-        // put your code here
+        include './autoload.php';
+        $util = new Util();
         include './templates/acess-required.html.php';
+
+
+        echo "<p> Your user id is: " . $_SESSION['user_id'] . "</p><br />";
+        echo "<p> Your email is: " . $_SESSION['user_email'] . "</p><br />";
+
+        if ($util->isPostRequest()) {
+
+            $util->logout();
+            $util->redirect('login.php');
+        }
         ?>
+
     </body>
 </html>

@@ -29,10 +29,9 @@ and open the template in the editor.
             $user_id = $reg->login($email, $pass);
             if ($user_id > 0) {
                 $_SESSION["user_id"] = $user_id;
+                $_SESSION["user_email"] = $email;
                 $util->redirect("admin.php");
             }
-            
-            
             
             if (!$valid->emailIsValid($email)) {
                 $errors[] = 'Email is not valid!';
@@ -43,10 +42,10 @@ and open the template in the editor.
                 $errors[] = 'Pass is not valid!';
             }
             
-            
+
             
         }
-        
+
         
         include './templates/login.html.php';
         
