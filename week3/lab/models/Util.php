@@ -15,11 +15,10 @@ class Util {
     public function isPostRequest() {
         return ( filter_input(INPUT_SERVER, 'REQUEST_METHOD') === 'POST' );
     }
-    
+
     public function logout() {
         unset($_SESSION);
         session_destroy();
-        
     }
 
     /**

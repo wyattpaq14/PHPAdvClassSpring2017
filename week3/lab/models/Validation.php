@@ -39,11 +39,9 @@ class Validation extends DB {
         if ($stmt->execute($binds) && $stmt->rowCount() > 0) {
             //email exists
             return true;
-
         }
         //email doesnt exist
         return false;
-
     }
 
 }

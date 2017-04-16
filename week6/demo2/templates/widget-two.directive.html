@@ -4,7 +4,8 @@
     <div class="input-group">
         <input type="text" ng-model="todoitem" placeholder="Add Todo Item" class="form-control"  /> 
         <span class="input-group-btn">
-            <button ng-click="add({'item': todoitem}); todoitem = '';" class="btn btn-info">Add</button>
+            <button ng-click="add({'item': todoitem});
+                    todoitem = '';" class="btn btn-info">Add</button>
         </span>    
     </div><!-- /input-group -->
 </div><!-- /.col-lg-6 -->

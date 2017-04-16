@@ -13,7 +13,7 @@ and open the template in the editor.
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     </head>
     <body>
-         <?php include './templates/navigation.html.php'; ?><br />
+        <?php include './templates/navigation.html.php'; ?><br />
         <div class="container-fluid col-lg-6 col-lg-offset-3">
             <?php
             // put your code here
@@ -50,15 +50,6 @@ and open the template in the editor.
                     $errors[] = 'Email allready exists!';
                 }
             }
-
-
-
-
-
-
-
-
-            
             ?>
             <?php include './templates/signup.html.php'; ?>
             <?php include './templates/errors.html.php'; ?>

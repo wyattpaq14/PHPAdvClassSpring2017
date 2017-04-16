@@ -23,9 +23,9 @@ and open the template in the editor.
             $reg = new Registration();
             $util = new Util();
             $valid = new Validation();
-            
-            
-            
+
+
+
             $errors;
 
             $email = filter_input(INPUT_POST, 'email');
