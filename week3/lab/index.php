@@ -32,7 +32,7 @@ and open the template in the editor.
 
             if ($util->isPostRequest()) {
                 if ($reg->signup($email, $pass)) {
-                    $util->redirect('../login.php');
+                    $util->redirect('login.php');
                 }
 
                 if (!$valid->emailIsValid($email)) {
