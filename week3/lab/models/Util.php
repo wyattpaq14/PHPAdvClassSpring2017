@@ -16,6 +16,11 @@ class Util {
         return ( filter_input(INPUT_SERVER, 'REQUEST_METHOD') === 'POST' );
     }
 
+    public function logout() {
+        unset($_SESSION);
+        session_destroy();
+    }
+
     /**
      * Generate link.
      * @param string $page target page
