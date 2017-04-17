@@ -16,7 +16,9 @@
             include './templates/errors.html.php';
             include './models/CRUD.php';
 
-
+            
+            
+            $addresses = readAllAddress();
 
             include './templates/view-address.html.php';
             ?>
