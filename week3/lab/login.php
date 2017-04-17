@@ -35,7 +35,6 @@ and open the template in the editor.
                 $user_id = $reg->login($email, $pass);
                 if ($user_id > 0) {
                     $_SESSION["user_id"] = $user_id;
-                    $_SESSION["user_email"] = $email;
                     $util->redirect("admin.php");
                 }
 
