@@ -39,12 +39,16 @@ and open the template in the editor.
                     $errors[] = 'Email is not valid!';
                 }
 
-                if ($pass !== $confirmpass) {
+                if (strcmp($pass, $confirmpass)) {
                     $errors[] = 'Password Missmatch!';
                 }
 
                 if (empty($pass)) {
                     $errors[] = 'Pass is not valid!';
+                }
+
+                if (empty($confirmpass)) {
+                    $errors[] = 'Confirm Pass is not valid!';
                 }
                 if ($valid->loginExists($email)) {
                     $errors[] = 'Email allready exists!';
