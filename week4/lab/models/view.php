@@ -23,7 +23,7 @@
         ?>
         <p>I am a view page! your file is <a href="<?php echo $file_path; ?>" download>link</a></p>
         <p>I am a view page! your file is <?php echo filesize($file_path); ?> bytes</p>
-        
+
         <?php
         $finfo = new SplFileInfo($file_path);
 
@@ -36,6 +36,12 @@
         <p>I am a view page! your file date is <?php echo date("l F j, Y, g:i a", $finfo->getMTime()); ?></p>
         <p>I am a view page! your file type is <?php echo $extension; ?></p>
 
-
+        <?php if ($extension == 'jpg' || $extension == 'png' || $extension == 'gif'): ?>
+            
+        <img src="<?php echo $file_path; ?>" />
+        
+        <?php endif ?>
+        
+        
     </body>
 </html>
