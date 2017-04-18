@@ -20,6 +20,12 @@
         $file = filter_input(INPUT_POST, 'file');
 
 
+        if (is_file($file)) {
+            chdir($folder);
+            unlink($file);
+            $util->redirect("../index.php");
+        }
+
         $directory = new DirectoryIterator($folder);
         ?>
         <ol>
@@ -27,7 +33,7 @@
                 <?php if ($fileInfo->isFile()) : ?>
 
                     <li><a href="view.php?asdf=<?php echo $fileInfo->getPathname(); ?>"><?php echo $fileInfo->getFilename(); ?></a>
-                        
+
                         <form action='#' method="POST">
                             <input type="hidden" name="file" value="<?php echo $fileInfo->getPathname(); ?>">
                             <input type="submit" name="submit" value="Delete" />
@@ -38,12 +44,6 @@
                 <?php endif; ?>
             <?php endforeach; ?>
         </ol>
-        <?php
-        if ($util->isPostRequest()) {
-            chdir($folder);
-            unlink($file);
-            $util->redirect("../index.php");
-        }
-        ?>
+
     </body>
 </html>
