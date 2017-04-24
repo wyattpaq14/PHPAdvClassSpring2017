@@ -2,9 +2,12 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <title>View</title>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     </head>
     <body>
+        <?php include '../templates/navigation.html.php'; ?>
         <?php
         // put your code here
 
@@ -37,11 +40,22 @@
         <p>I am a view page! your file type is <?php echo $extension; ?></p>
 
         <?php if ($extension == 'jpg' || $extension == 'png' || $extension == 'gif'): ?>
-            
-        <img src="<?php echo $file_path; ?>" />
-        
+
+            <img src="<?php echo $file_path; ?>" />
+
         <?php endif ?>
-        
-        
+
+
+        <?php if ($extension == 'txt'): ?>
+            <!--    retreive file information with spl-->
+            <?php $txtFile = new SplFileObject($file_path, "r"); ?>
+            <textarea><?php echo $txtFile->fread($txtFile->getSize()); ?></textarea>
+        <?php endif ?>
+
+        <?php if ($extension == 'pdf' || $extension == 'html' || $extension == 'htm'): ?>
+
+            <iframe src="<?php echo $file_path; ?>" />
+        <?php endif ?>
+
     </body>
 </html>
