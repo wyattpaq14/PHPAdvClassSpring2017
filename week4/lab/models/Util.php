@@ -12,8 +12,6 @@ class Util {
      *    
      * @return boolean
      */
-    
-
     public function isPostRequest() {
         return ( filter_input(INPUT_SERVER, 'REQUEST_METHOD') === 'POST' );
     }
@@ -22,8 +20,6 @@ class Util {
         unset($_SESSION);
         session_destroy();
     }
-
-   
 
     /**
      * Generate link.

@@ -23,8 +23,8 @@ and open the template in the editor.
                 echo "<p> Your user id is: " . $_SESSION['user_id'] . "</p><br />";
                 echo "<p> Your email is: " . $util->getEmailByUserID($_SESSION['user_id']) . "</p><br />";
             }
-            
-            
+
+
 
             if ($util->isPostRequest()) {
 
