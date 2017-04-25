@@ -54,9 +54,7 @@
 
         <script type="text/javascript">
 
-            var callBtn = document.querySelector('button');
-
-            callBtn.addEventListener('click', makeCall);
+            document.querySelector('button').addEventListener('click', makeCall);
 
             function makeCall() {
                 var verbfield = document.querySelector('select[name="verb"]');
@@ -73,30 +71,25 @@
                 };
                 var results = document.querySelector('textarea[name="results"]');
 
-                var xmlhttp = new XMLHttpRequest();
+                var httpRequest = new XMLHttpRequest();
 
                 var url = './api/v1/' + resource;
 
-                xmlhttp.open(verb, url, true);
+                httpRequest.open(verb, url, true);
+                httpRequest.addEventListener('readystatechange', callComplete);
 
-                xmlhttp.onreadystatechange = function () {
-                    if (xmlhttp.readyState === 4) {
-
-                        console.log(xmlhttp.responseText);
-                        results.value = xmlhttp.responseText;
-                    } else {
-                        // waiting for the call to complete
-                    }
-                };
-                //var username = 'test';
-                // xmlhttp.setRequestHeader("Authorization", "Basic " + btoa(username + "
-                // "));
+                function callComplete() {
+                    if (this.readyState === XMLHttpRequest.DONE) {
+                        console.log(this.responseText);
+                        results.value = this.responseText;
+                    } // else waiting for the call to complete
+                }
 
                 if (verb === 'GET') {
-                    xmlhttp.send(null);
+                    httpRequest.send(null);
                 } else {
-                    xmlhttp.setRequestHeader('Content-type', 'application/json;charset=UTF-8');
-                    xmlhttp.send(JSON.stringify(data));
+                    httpRequest.setRequestHeader('Content-type', 'application/json;charset=UTF-8');
+                    httpRequest.send(JSON.stringify(data));
                 }
             }
         </script>

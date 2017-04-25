@@ -1,12 +1,6 @@
 <?php
 
-class AddressResoruce extends DB implements IRestModel {
-
-    function __construct() {
-
-        $util = new Util();
-        $this->setDbConfig($util->getDBConfig());
-    }
+class AddressResoruce extends DBSpring implements IRestModel {
 
     public function getAll() {
         $stmt = $this->getDb()->prepare("SELECT * FROM address");

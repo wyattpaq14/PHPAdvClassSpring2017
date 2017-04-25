@@ -13,4 +13,8 @@ interface IRestModel {
 
     function post($serverData);
     
+    function delete($id);
+    
+    function put($id, $serverData);
+    
 }

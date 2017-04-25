@@ -14,7 +14,7 @@ $status_codes = array(
     500 => 'Internal Server Error',
 );
 
-$status = 200;
+$status = 500;
 
 header("HTTP/1.1 " . $status . " " . $status_codes[$status]);
 
