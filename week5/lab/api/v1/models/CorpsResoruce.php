@@ -1,6 +1,6 @@
 <?php
 
-class AddressResoruce extends DBSpring implements IRestModel {
+class CorpsResoruce extends DBSpring implements IRestModel {
 
     public function delete($id) {
         $stmt = $this->getDb()->prepare("DELETE FROM corps WHERE id = :id");

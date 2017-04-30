@@ -28,7 +28,7 @@
         <br />
         <br />
         Resource for endpoint:<br />
-        <input name="resource" value="address" />
+        <input name="resource" value="corps" />
         <br />
         <br />
 
