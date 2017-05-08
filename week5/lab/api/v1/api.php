@@ -71,39 +71,29 @@ try {
         if (NULL === $id) {
             throw new InvalidArgumentException($resourceUCName . ' ID ' . $id . ' was not found');
         }
-        
+
         if ($resourceData->put($id, $serverData)) {
-            
+
             $restServer->setMessage($resourceUCName . ' Updated');
             $restServer->setStatus(201);
-            
         } else {
             
         }
-        
-        
-        
-        
-        
     }
-    
+
     if ('DELETE' === $verb) {
-        
+
         if (NULL === $id) {
             throw new InvalidArgumentException($resourceUCName . ' ID ' . $id . ' was not found');
             exit();
         }
-        
+
         if ($resourceData->delete($id)) {
             $restServer->setMessage($resourceUCName . ' Deleted');
             $restServer->setStatus(201);
         } else {
             throw new Exception($resourceUCName . ' could not be added');
         }
-        
-        
-        
-        
     }
 
 

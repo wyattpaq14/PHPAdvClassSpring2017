@@ -12,5 +12,4 @@ interface IRestModel {
     function get($id);
 
     function post($serverData);
-    
 }

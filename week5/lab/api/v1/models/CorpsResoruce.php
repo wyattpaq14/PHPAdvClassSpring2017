@@ -35,16 +35,6 @@ class CorpsResoruce extends DBSpring implements IRestModel {
             return true;
         }
         return false;
-
-
-
-
-
-
-
-
-
-        
     }
 
     public function getAll() {
