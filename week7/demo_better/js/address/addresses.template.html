@@ -16,7 +16,7 @@
             </tr>
         </thead>    
         
-        <tr ng-repeat="address in addresses">
+        <tr ng-repeat="address in vm.addresses">
             <td>{{address.fullname}}</td>                  
             <td>{{address.email}}</td>
             <td><a ng-href="#/address/{{address.address_id}}">View</a></td>

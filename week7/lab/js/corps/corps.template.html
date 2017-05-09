@@ -1,0 +1,34 @@
+<h1>Corps Table</h1>
+
+<div class="content">
+    
+    <div class="form-group">
+      <label for="inputSearch" class="col-lg-2 control-label">Search</label>
+      <div class="col-lg-10">
+        <input ng-model="searchText" type="text" class="form-control" id="inputSearch" placeholder="Corp Search">
+      </div>
+    </div>
+    <!-- https://docs.angularjs.org/api/ng/filter/filter -->
+    <br />
+    <br /> 
+    
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Corperation</th>              
+                <th>Email</th>
+                <th>Phone</th>
+                <th>View</th>
+            </tr>
+        </thead>    
+        
+        <tr ng-repeat="corps in vm.corps | filter:searchText">
+            <td>{{corps.corp}}</td>                  
+            <td>{{corps.email}}</td>
+            <td>{{corps.phone}}</td>
+            <td><a ng-href="#/corps/{{corps.id}}">View</a></td>
+        </tr>
+    </table>
+        
+</div>
+
